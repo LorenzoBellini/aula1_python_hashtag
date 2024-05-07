@@ -1,0 +1,25 @@
+Passo a passo, sempre anotar o que precisa fazer:
+Aprenderemos a automatizar os processos abaixo:
+Whats para esclarecimento de dúvidas: (21)96721-8715
+Código da aula: aprendapython
+
+Informações úteis:
+    https://dlp.hashtagtreinamentos.com/python/intensivao/login
+    Utilizar comando "pip install pyautogui" para AUTOMATIZAR comandos (Mouse, teclado, etc)
+    Quando em arquivo python 
+        - import pyaugotgui
+        - import time (Comando para baixar a biblioteca 'time' do Python [Não precisa de download])
+        - time.sleep(x) (Comando especial para pausar o código por x segundos entre uma linha de código e outra)
+        - pyaugotgui.PAUSE = x (Vai fazer uma pausa de x segundos antes de executar o próximo comando)
+        - pyautogui.click (x=..., y=...) (x e y são coordenadas que você fornece) (Mouse)
+        - pyaugotgui.write (Escrever)
+        - pyaugotgui.press (Apertar botão específico)
+        - pyaugotgui.hotkey (Apertar conjunto de teclas, ctrl c, ctrl v, alt tab, etc)
+        - pyaugotgui.scroll (x) (Vai dar scroll pra cima se o número for positivo, ou pra baixo caso o número seja negativo)
+
+
+1. Abrir o sistema da empresa
+2. Fazer Login
+3. Abrir/ Importar base de dados de produtos para cadastrar
+4. Cadastrar produtos
+5. Repetir até acabar a lista de produtos
