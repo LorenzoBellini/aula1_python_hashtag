@@ -7,7 +7,7 @@ import pyautogui as pa
 import pandas as pd
 Aí toda vez que for escrever o comando, usar a abreviação de escolha'''
 
-pyautogui.PAUSE = 0.6 #Comando para definir o intervalo de tempo entre uma linha de código e outra
+pyautogui.PAUSE = 0.7 #Comando para definir o intervalo de tempo entre uma linha de código e outra
 
 # 1 Comandos para abrir o navegador: 
 pyautogui.press("win") #Comando para apertar a tecla window
@@ -31,35 +31,36 @@ tabela = pd.read_csv("produtos.csv") # Abrir o código no mesmo lugar do arquivo
 
 # 5 Comandos para cadastrar um produto
 
-for linha in tabela.index:
-    codigo = tabela.loc[linha, coluna]
+for linha in tabela.index: # 6 Esse é o comando para repetição até o fim da lista
+#Lembrando de sempre deixar as informações em STRING!!!
+
     pyautogui.click(x=438, y=256)
 
-    pyautogui.write(codigo)
+    pyautogui.write(str(tabela.loc[linha, "codigo"]))
     pyautogui.press("tab")
 
-    pyautogui.write("Marca")
+    pyautogui.write(str(tabela.loc[linha, "marca"]))
     pyautogui.press("tab")
 
-    pyautogui.write("Tipo")
+    pyautogui.write(str(tabela.loc[linha, "tipo"]))
     pyautogui.press("tab")
 
-    pyautogui.write("Categoria")
+    pyautogui.write(str(tabela.loc[linha, "categoria"]))
     pyautogui.press("tab")
 
-    pyautogui.write("Preco")
+    pyautogui.write(str(tabela.loc[linha, "preco_unitario"]))
     pyautogui.press("tab")
 
-    pyautogui.write("Custo")
+    pyautogui.write(str(tabela.loc[linha, "custo"]))
     pyautogui.press("tab")
 
-    pyautogui.write("Obs")
-    pyautogui.press("tab")
+    obs = str(tabela.loc[linha, "obs"])
+    if obs != "nan":
+        pyautogui.write(obs)
+        pyautogui.press("tab")
 
     pyautogui.press("enter")
     pyautogui.scroll(5000)
-
-# 6 Comandos para repetir os passos acima até que a lista acabe
 
 
 
